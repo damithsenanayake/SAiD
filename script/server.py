@@ -20,7 +20,7 @@ global model_ready
 
 model_ready = False
 
-def init_said_model(device="cuda:0", prediction_type="epsilon", unet_feature_dim=-1, weights_path="/home/damith/Documents/SAiD/model/SAiD/SAiD.pth"):
+def init_said_model(device="cuda:0", prediction_type="epsilon", unet_feature_dim=-1, weights_path="/home/isnai/testing/SAiD/model/SAiD/SAiD.pth"):
     global said_model
     global model_ready
     
