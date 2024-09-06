@@ -69,7 +69,7 @@ def main():
         help="Save the intermediate outputs",
     )
     parser.add_argument(
-        "--num_steps", type=int, default=1000, help="Number of inference steps"
+        "--num_steps", type=int, default=5, help="Number of inference steps"
     )
     parser.add_argument("--strength", type=float, default=1.0, help="How much to paint")
     parser.add_argument(
