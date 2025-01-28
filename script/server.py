@@ -107,8 +107,26 @@ async def generate_blendshapes(audio_input: AudioInput):
 
     return a2f_object
 
-# To run the server on port 8011
+# Updated code
 if __name__ == "__main__":
     import uvicorn
-    init_said_model()
-    uvicorn.run(app, host="0.0.0.0", port=8011)
+    import argparse
+
+    # Modify init_said_model to accept weights_path
+    def init_said_model(weights_path):
+        # Your initialization logic here
+        print(f"Initializing model with weights from: {weights_path}")
+        # Load the weights or perform model initialization
+
+    # Add argument parser for weights_path
+    parser = argparse.ArgumentParser(description="Run the server with a specified weights path.")
+    parser.add_argument("--weights_path", required=True, help="Path to the weights file (e.g., /path/to/weights.pth)", default="./SAiD/SAiD.pth")
+    parser.add_argument("--host", default="0.0.0.0")
+    parser.add_argument("--port", default=8011)
+    args = parser.parse_args()
+
+    # Initialize the model with the provided weights path
+    init_said_model(args.weights_path)
+
+    # Run the server
+    uvicorn.run(app, host=args.host, port=args.port)
