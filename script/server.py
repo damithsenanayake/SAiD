@@ -112,12 +112,7 @@ if __name__ == "__main__":
     import uvicorn
     import argparse
 
-    # Modify init_said_model to accept weights_path
-    def init_said_model(weights_path):
-        # Your initialization logic here
-        print(f"Initializing model with weights from: {weights_path}")
-        # Load the weights or perform model initialization
-
+   
     # Add argument parser for weights_path
     parser = argparse.ArgumentParser(description="Run the server with a specified weights path.")
     parser.add_argument("--weights_path", required=True, help="Path to the weights file (e.g., /path/to/weights.pth)", default="./SAiD/SAiD.pth")
