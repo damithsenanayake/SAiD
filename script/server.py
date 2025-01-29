@@ -121,7 +121,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Initialize the model with the provided weights path
-    init_said_model(args.weights_path)
+    init_said_model(weights_path=args.weights_path)
 
     # Run the server
     uvicorn.run(app, host=args.host, port=args.port)
